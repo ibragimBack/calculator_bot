@@ -1,0 +1,8 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+    command: sh -c "python main.py 0.0.0.0:8000"
+    ports:
+      - "8000:8000"

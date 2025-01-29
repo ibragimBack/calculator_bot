@@ -1,7 +1,10 @@
 from aiogram import Bot, Dispatcher, types
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-
-bot = Bot(token='7568275743:AAGZsTwlQ7X154-RJavkGrOkhZoA1J6ElfE')
+from dotenv import load_dotenv
+from os import getenv
+# session = AiohttpSession(proxy="http://proxy.server:3128")
+load_dotenv()
+bot = Bot(token=getenv('BOT_TOKEN'))
 dp = Dispatcher()
 scheduler = AsyncIOScheduler()
 
