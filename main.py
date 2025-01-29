@@ -17,12 +17,16 @@ async def on_startup():
 async def main():
     await on_startup()
 
+    print("Настроим команды...")
     await set_commands()
 
+    print("Подключаем обработчики...")
     dp.include_router(start.start_router)
 
+    print("Запуск планировщика...")
     scheduler.start()
 
+    print("Начинаем polling...")
     await dp.start_polling(bot, skip_updates=True, request_timeout=60)
 
 if __name__ == '__main__':
