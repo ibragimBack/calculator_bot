@@ -23,7 +23,7 @@ async def main():
 
     scheduler.start()
 
-    await dp.start_polling(bot)
+    await dp.start_polling(bot, skip_updates=True, request_timeout=60)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
